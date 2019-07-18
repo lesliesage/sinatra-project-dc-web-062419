@@ -4,10 +4,10 @@
     <title></title>
 </head>
 <body>
-    <a href="/restaurants/new">Add a Restaurant</a> ::
+    <a href="/restaurants/new">Add a Restaurant</a> ** 
     <a href="/users/new">Add a User</a> ::
     <a href="/restaurants">See All Restaurants</a>
-    
+
     <ul>
     <% @users.each do |user| %>
       <li><a href="/users/<%= user.id %>"><%= user.name %></a></li>
