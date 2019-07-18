@@ -1,8 +1,8 @@
 class CreateSignups < ActiveRecord::Migration[5.2]
   def change
     create_table :signups do |t|
-      t.integer :restaurant_id
-      t.integer :user_id
+      t.belongs_to :restaurant, index: true
+      t.belongs_to :user
     end
   end
 end

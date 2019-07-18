@@ -4,8 +4,17 @@
     <title></title>
 </head>
 <body>
+    <a href="/restaurants/new">Add a Restaurant</a> ::
+    <a href="/restaurants">See All Restaurants</a> ::
+    <a href="/users">See All Users</a>
+    
     <h1>Best new user form ever</h1>
 
+    <form action="/users" method="post">
+      <label for="name">New user name: </label><br>
+      <input type="text" name="name"><br><br>
+      <input type="submit" name="submit" value="Add User">
+    </form>
 
 </body>
 </html>

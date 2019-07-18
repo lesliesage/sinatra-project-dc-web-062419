@@ -4,8 +4,19 @@
     <title></title>
 </head>
 <body>
-    <h1>Best user ever</h1>
+    <a href="/restaurants/new">Add a Restaurant</a> ::
+    <a href="/users/new">Add a User</a> ::
+    <a href="/restaurants">See All Restaurants</a> ::
+    <a href="/users">See All Users</a>
 
+    <h1>Welcome, <%= @user.name %>!</h1>
+
+    <p>Here are all the restaurants you've signed up for!</p>
+    <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a></li>
+    <% end %>
+    </ul>
 
 </body>
 </html>

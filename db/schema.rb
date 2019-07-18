@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_07_18_180529) do
   create_table "signups", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "user_id"
+    t.index ["restaurant_id"], name: "index_signups_on_restaurant_id"
+    t.index ["user_id"], name: "index_signups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

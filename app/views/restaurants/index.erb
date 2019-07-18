@@ -4,8 +4,15 @@
     <title></title>
 </head>
 <body>
+    <a href="/restaurants/new">Add a Restaurant</a> ::
+    <a href="/users/new">Add a User</a> ::
+    <a href="/users">See All Users</a>
+    
     <h1>Best restaurant index, ever</h1>
-
-
+    <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a></li>
+    <% end %>
+    </ul>
 </body>
 </html>

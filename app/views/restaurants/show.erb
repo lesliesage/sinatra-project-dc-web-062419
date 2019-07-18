@@ -4,8 +4,32 @@
     <title></title>
 </head>
 <body>
-    <h1>Best restaurant ever</h1>
+    <a href="/restaurants/new">Add a Restaurant</a> ::
+    <a href="/users/new">Add a User</a> ::
+    <a href="/restaurants">See All Restaurants</a> :: 
+    <a href="/users">See All Users</a>
 
+    <h1><%= @restaurant.name %></h1>
+    <h3>Rating: <%= @restaurant.rating %></h3>
+    <h3>Address: <%= @restaurant.address %></h3>
+    <br>
+
+    <p>Here are the signed up users!</p>
+    <ul>
+    <% @signedup_users.each do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+    </ul>
+
+    <p>Add to List of Restaurants to Try</p>
+    <form action="/restaurants/<%= @restaurant.id %>" method="post">
+      <select name="user_id">
+      <% @other_users.each do |user| %>
+        <option value="<%= user.id %>"><%= user.name %></option>
+      <% end %>
+      </select>
+      <input type="submit" value="Sign up!">
+    </form>
 
 </body>
 </html>

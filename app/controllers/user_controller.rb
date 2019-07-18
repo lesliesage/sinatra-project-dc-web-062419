@@ -4,6 +4,7 @@ class UserController < Sinatra::Base
     set :method_override, true
 
     get '/users' do
+        @users = User.all
         erb :index
     end
 
@@ -16,12 +17,11 @@ class UserController < Sinatra::Base
         # form params
         redirect 'users/@user.id'
     end
-    
+
     get '/users/:id' do
         id = params[:id]
         @user = User.find(id)
+        @restaurants = @user.restaurants
         erb :show
     end
-
-
 end

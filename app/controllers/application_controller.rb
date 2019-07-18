@@ -5,7 +5,6 @@ class ApplicationController < Sinatra::Base
     get '/' do
       # client = Yelp::Fusion.client
       # resp = client.search('London', {term: 'noodles'})
-      binding.pry
     end
 
 
